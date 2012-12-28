@@ -1,0 +1,33 @@
+
+A simple NASDAQ-traded stock recommender based on Apache Mahout.
+
+Pre-requisites:
+
+The following software needs to be installed to compile/run the system:
+
+- Apache Hadoop
+- Apache Mahout
+- Maven
+- JDK
+- MongoDB (user can create the server/client standalone)
+- Amazon EC2 (optional)
+
+Building the system:
+
+'mvn install'
+
+Data Entry:
+
+The UserOptions driver can be used to enter data into the system.
+Examples:
+mahout hadoop jar  <target-dir>/mahoutrec-1.0-SNAPSHOT.jar com.aguin.stock.recommender.UserOptions -u x.y@gmail.com -ip GS:3.0 -ip YHOO:8.0
+mahout hadoop jar  <target-dir>/mahoutrec-1.0-SNAPSHOT.jar com.aguin.stock.recommender.UserOptions -u x.y@gmail.com -p 6.0
+mahout hadoop jar  <target-dir>/mahoutrec-1.0-SNAPSHOT.jar com.aguin.stock.recommender.UserOptions -u x.y@gmail.com -i YHOO 
+
+Running the recommender:
+
+The StockRecommender driver can be used to enter data into the system.
+Example:
+
+mahout hadoop jar  target/mahoutrec-1.0-SNAPSHOT.jar com.aguin.stock.recommender.StockRecommender
+
